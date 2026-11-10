@@ -1,0 +1,12 @@
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  background: #0a0f1c;
+}

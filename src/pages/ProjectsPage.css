@@ -1,0 +1,231 @@
+.projects {
+  padding-block: var(--space-4) var(--space-16);
+}
+
+.projects__container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Filtros */
+.projects__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.projects__filter {
+  padding: var(--space-1) var(--space-8);   
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(255 255 255 / 4%);  
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.projects__filter:hover {
+  color: var(--color-text);
+  border-color: rgb(59 130 246 / 40%);
+}
+
+.projects__filter--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Grid */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Tarjeta */
+.projects__card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgb(255 255 255 / 6%);
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.projects__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects__card:hover .projects__image,
+.projects__card:focus-within .projects__image {
+  transform: scale(1.06);
+}
+
+/* Overlay */
+.projects__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: linear-gradient(
+    to top,
+    rgb(5 10 25 / 95%) 0%,
+    rgb(5 10 25 / 75%) 55%,
+    rgb(5 10 25 / 20%) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects__card:hover .projects__overlay,
+.projects__card:focus-within .projects__overlay {
+  opacity: 1;
+}
+
+.projects__tags,
+.projects__title,
+.projects__description,
+.projects__link {
+  transform: translateY(20px);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects__card:hover .projects__tags,
+.projects__card:hover .projects__title,
+.projects__card:hover .projects__description,
+.projects__card:hover .projects__link,
+.projects__card:focus-within .projects__tags,
+.projects__card:focus-within .projects__title,
+.projects__card:focus-within .projects__description,
+.projects__card:focus-within .projects__link {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.projects__card:hover .projects__title,
+.projects__card:focus-within .projects__title {
+  transition-delay: 0.05s;
+}
+
+.projects__card:hover .projects__description,
+.projects__card:focus-within .projects__description {
+  transition-delay: 0.1s;
+}
+
+.projects__card:hover .projects__link,
+.projects__card:focus-within .projects__link {
+  transition-delay: 0.15s;
+}
+
+/* Contenido del overlay */
+.projects__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects__tag {
+  padding: 2px var(--space-3);
+  border-radius: 999px;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-light);
+  background: rgb(59 130 246 / 15%);
+}
+
+.projects__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.projects__description {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.projects__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+/* Táctil: sin hover, el overlay queda visible */
+@media (hover: none) {
+  .projects__overlay {
+    opacity: 1;
+  }
+
+  .projects__tags,
+  .projects__title,
+  .projects__description,
+  .projects__link {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* Movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .projects__image,
+  .projects__overlay,
+  .projects__tags,
+  .projects__title,
+  .projects__description,
+  .projects__link {
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects {
+    padding-block: var(--space-4) var(--space-12);
+  }
+
+  .projects__container {
+    padding-inline: var(--space-4);
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,151 @@
+.contact {
+  padding-block: var(--space-4) var(--space-16);
+}
+
+.contact__container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.contact__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+/* Tarjetas */
+.contact__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+/* Formulario + lateral */
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.contact__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact__panel {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgb(255 255 255 / 8%);
+  background: rgb(17 24 43 / 80%);
+}
+
+.contact__panel-title {
+  margin: 0 0 var(--space-5);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+/* Pasos */
+.contact__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.contact__step {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.contact__step-number {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-light);
+}
+
+.contact__step-title {
+  display: block;
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.contact__step-text {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* WhatsApp */
+.contact__whatsapp {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  text-decoration: none;
+  transition:
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.contact__whatsapp:hover {
+  border-color: #4ade80;
+  transform: translateY(-3px);
+}
+
+.contact__whatsapp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: rgb(74 222 128 / 12%);
+  color: #4ade80;
+}
+
+.contact__whatsapp-link {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-light);
+}
+
+@media (max-width: 1024px) {
+  .contact__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding-block: var(--space-4) var(--space-12);
+  }
+
+  .contact__container {
+    padding-inline: var(--space-4);
+  }
+
+  .contact__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__whatsapp {
+    transition: none;
+  }
+}

@@ -1,0 +1,41 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./typography.css";
+@import "./utilities.css";
+
+body {
+  background:
+    radial-gradient(
+      1200px 600px at 80% -10%,
+      rgb(59 130 246 / 12%),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 20%,
+      rgb(34 211 238 / 8%),
+      transparent 60%
+    ),
+    var(--color-bg);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

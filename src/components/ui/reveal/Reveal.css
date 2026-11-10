@@ -1,0 +1,109 @@
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal {
+  transition-property: opacity, transform, filter, letter-spacing;
+  transition-duration: var(--reveal-duration, 1000ms);
+  transition-timing-function: var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* ---- Estado inicial por variante ---- */
+.reveal[data-variant="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  filter: blur(6px);
+}
+
+.reveal[data-variant="fade"] {
+  opacity: 0;
+  filter: blur(6px);
+}
+
+.reveal[data-variant="spread"] {
+  opacity: 0;
+  letter-spacing: var(--reveal-spread-from, 0.4em);
+}
+
+.reveal[data-variant="slide-right"] {
+  --reveal-duration: 2200ms;
+  opacity: 0;
+  transform: translate3d(48px, 0, 0) scale(0.985);
+  filter: blur(3px);
+}
+
+/* Línea de título que sube desde una máscara */
+.reveal[data-variant="line"] {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.reveal__inner {
+  display: block;
+  transform: translate3d(0, 110%, 0);
+  transition: transform var(--reveal-duration, 1100ms) var(--ease-out)
+    var(--reveal-delay, 0ms);
+}
+
+/* Trazo que se dibuja (el <path> debe llevar pathLength="1") */
+.reveal[data-variant="draw"] path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--reveal-duration, 3000ms) var(--ease-out)
+    var(--reveal-delay, 0ms);
+}
+
+/* ---- Estado visible ---- */
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.reveal[data-variant="spread"][data-visible="true"] {
+  letter-spacing: var(--reveal-spread-to, 0.22em);
+}
+
+.reveal[data-visible="true"] .reveal__inner {
+  transform: none;
+}
+
+.reveal[data-variant="draw"][data-visible="true"] path {
+  stroke-dashoffset: 0;
+}
+
+/* ---- Flotado continuo (usa `translate`, no pisa tu transform/inclinación) ---- */
+@keyframes reveal-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+.reveal-float {
+  animation: reveal-float 7s ease-in-out 2s infinite;
+}
+
+/* ---- Movimiento reducido ---- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal__inner,
+  .reveal[data-variant="draw"] path {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    letter-spacing: revert;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+
+  .reveal-float {
+    animation: none;
+  }
+}

@@ -1,0 +1,57 @@
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+.h1 {
+  font-size: clamp(2rem, 4vw + 1rem, var(--font-size-5xl));
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-extrabold);
+}
+
+h2,
+.h2 {
+  font-size: clamp(1.75rem, 3vw + 0.75rem, var(--font-size-3xl));
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+  font-weight: var(--font-weight-bold);
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.25rem, 1.5vw + 0.75rem, var(--font-size-xl));
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-semibold);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-snug);
+  font-weight: var(--font-weight-semibold);
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-primary {
+  color: var(--color-primary-light);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

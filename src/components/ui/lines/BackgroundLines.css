@@ -1,0 +1,31 @@
+.bg-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-lines__line {
+  position: absolute;
+  width: min(60vw, 720px);
+  height: auto;
+}
+
+.bg-lines__line--flip {
+  transform: scaleX(-1);
+}
+
+.bg-lines__line path {
+  stroke: #fff;
+  stroke-opacity: 0.3;
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 640px) {
+  .bg-lines__line {
+    width: 90vw;
+    opacity: 0.6;
+  }
+}
