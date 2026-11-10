@@ -1,4 +1,4 @@
-import { Users, Layers, Mail, Workflow, Gem  } from "lucide-react";
+import { Users, Layers, Mail, Workflow, Gem } from "lucide-react";
 
 export const titleData = {
   about: {
@@ -19,7 +19,7 @@ export const titleData = {
     description:
       "Soluciones digitales a la medida para optimizar tus procesos y escalar tu operación.",
   },
-   process: {
+  process: {
     icon: Workflow,
     breadcrumb: "",
     before: "Cómo ",
@@ -28,7 +28,7 @@ export const titleData = {
     description:
       "Un proceso claro de 4 pasos para entregar cada proyecto con excelencia.",
   },
-   values: {
+  values: {
     icon: Gem,
     breadcrumb: "Proceso",
     before: "Lo que nos ",
@@ -53,5 +53,60 @@ export const titleData = {
     highlight: "Hablemos",
     after: " de tu proyecto",
     description: "Cuéntanos tu idea y te respondemos en menos de 24 horas.",
+  },
+  // Detalle de proyectos individuales (6 proyectos)
+  "project-ecommerce": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "Plataforma de ",
+    highlight: "Comercio Electrónico",
+    after: "",
+    description:
+      "Tienda en línea completa con pasarela de pagos, inventario en tiempo real y panel de administración para gestionar pedidos y clientes.",
+  },
+  "project-school": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "App de ",
+    highlight: "gestión escolar",
+    after: "",
+    description:
+      "Aplicación móvil para notas, asistencia y comunicación con las familias.",
+  },
+  "project-brand": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "Identidad de ",
+    highlight: "marca digital",
+    after: "",
+    description:
+      "Sistema de diseño y guía visual para una marca con presencia multicanal.",
+  },
+  "project-cloud": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "",
+    highlight: "Migración a la nube",
+    after: "",
+    description:
+      "Traslado de infraestructura local a la nube con cero tiempo de inactividad.",
+  },
+  "project-analytics": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "Panel de ",
+    highlight: "analítica",
+    after: "",
+    description:
+      "Dashboard con métricas e indicadores clave para la toma de decisiones.",
+  },
+  "project-delivery": {
+    icon: Layers,
+    breadcrumb: "Proyectos",
+    before: "App de ",
+    highlight: "pedidos y entregas",
+    after: "",
+    description:
+      "Aplicación móvil con seguimiento en vivo de pedidos y notificaciones push.",
   },
 };

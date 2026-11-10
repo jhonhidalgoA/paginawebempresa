@@ -1,0 +1,17 @@
+export const technologyData = {
+  react: { name: "React", icon: "devicon-react-original colored" },
+  nextjs: { name: "Next.js", icon: "devicon-nextjs-original colored" },
+  nodejs: { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+  typescript: { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+  javascript: { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  html: { name: "HTML5", icon: "devicon-html5-plain colored" },
+  css: { name: "CSS3", icon: "devicon-css3-plain colored" },
+  tailwind: { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
+  bootstrap: { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
+  mongodb: { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+  mysql: { name: "MySQL", icon: "devicon-mysql-plain colored" },
+  postgresql: { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
+  firebase: { name: "Firebase", icon: "devicon-firebase-plain colored" },
+  flutter: { name: "Flutter", icon: "devicon-flutter-plain colored" },
+  aws: { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored" },
+};

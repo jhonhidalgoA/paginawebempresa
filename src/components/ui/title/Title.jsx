@@ -8,7 +8,8 @@ export default function Title({ page }) {
   if (!data) return null;
 
   const {
-    icon: Icon,
+    icon:
+    Icon,
     breadcrumb,
     before,
     highlight,
@@ -16,21 +17,39 @@ export default function Title({ page }) {
     description,
   } = data;
 
+  const isProjectDetail = page.startsWith("project-");
+
   return (
     <div className="title">
       {breadcrumb && (
-        <nav className="title__breadcrumb" aria-label="Migas de pan">
+        <nav className="title__breadcrumb" aria-label="breadcrumb">
           <Link to="/" className="title__crumb">
             <Home size={16} />
             <span>Inicio</span>
           </Link>
           <ChevronRight size={14} className="title__separator" />
-          <span
-            className="title__crumb title__crumb--current"
-            aria-current="page"
-          >
-            <span>{breadcrumb}</span>
-          </span>
+
+          {isProjectDetail ? (
+            <>
+              <Link to="/projects" className="title__crumb">
+                <span>Proyectos</span>
+              </Link>
+              <ChevronRight size={14} className="title__separator" />
+              <span
+                className="title__crumb title__crumb--current"
+                aria-current="page"
+              >
+                <span>{highlight}</span>
+              </span>
+            </>
+          ) : (
+            <span
+              className="title__crumb title__crumb--current"
+              aria-current="page"
+            >
+              <span>{breadcrumb}</span>
+            </span>
+          )}
         </nav>
       )}
 
@@ -40,7 +59,9 @@ export default function Title({ page }) {
         {after}
       </h2>
 
-      <p className="title__description">{description}</p>
+        {!isProjectDetail && (
+        <p className="title__description">{description}</p>
+      )}
     </div>
   );
 }

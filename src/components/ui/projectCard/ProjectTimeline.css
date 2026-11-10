@@ -1,0 +1,110 @@
+.project-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.project-timeline__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.project-timeline__highlight {
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-timeline__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-timeline__item {
+  position: relative;
+  padding-left: calc(22px + var(--space-4));
+}
+
+/* Punto */
+.project-timeline__dot {
+  position: absolute;
+  top: var(--space-5);
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+/* Línea que une con el siguiente paso */
+.project-timeline__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  width: 2px;
+  top: calc(var(--space-5) + 22px + 4px);
+  bottom: calc(-1 * (var(--space-4) + var(--space-5) - 4px));
+  background: rgb(255 255 255 / 12%);
+}
+
+/* Tarjeta */
+.project-timeline__card {
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgb(255 255 255 / 8%);
+  background: rgb(17 24 43 / 80%);
+  transition: border-color var(--transition-normal);
+}
+
+.project-timeline__card:hover {
+  border-color: var(--color-primary);
+}
+
+.project-timeline__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.project-timeline__step-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.project-timeline__period {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.project-timeline__description {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .project-timeline__card {
+    padding: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-timeline__card {
+    transition: none;
+  }
+}
