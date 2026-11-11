@@ -3,7 +3,7 @@ import { Code2, ChevronRight, ArrowRight, ArrowUp } from "lucide-react";
 import { footerData } from "@data/footerData";
 import { navbarData } from "@data/navbarData";
 import { servicesData } from "@data/servicesData";
-import CreativeWebDesign from "../CreativeWebDesign/CreativeWebDesign";
+import Logo from "../logo/Logo";
 import "./Footer.css";
 
 export default function Footer() {
@@ -31,7 +31,7 @@ export default function Footer() {
               <span className="footer__logo" aria-hidden="true">
                 <Code2 size={18} strokeWidth={2.5} />
               </span>
-              <CreativeWebDesign />
+              <Logo />
             </Link>
             <p className="footer__description">{description}</p>
             <ul className="footer__social" aria-label="Redes sociales">

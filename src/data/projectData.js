@@ -54,6 +54,26 @@ export const projectData = [
           "Pruebas de rendimiento, ajustes finales, publicación y acompañamiento inicial.",
       },
     ],
+     testimonials: [
+      {
+        id: "t1",
+        text: "El equipo entendió lo que necesitábamos desde el primer día. La tienda cargó más rápido y ahora gestionamos los pedidos sin complicaciones.",
+        name: "Carlos Restrepo",
+        role: "Director, Tienda Ejemplo",
+      },
+      {
+        id: "t2",
+        text: "Nos explicaron cada etapa con claridad y cumplieron los tiempos acordados. El panel de administración nos ahorra horas de trabajo.",
+        name: "María Gómez",
+        role: "Gerente de operaciones",
+      },
+      {
+        id: "t3",
+        text: "La experiencia de compra mejoró mucho. Nuestros clientes lo notaron desde la primera semana y el soporte posterior fue excelente.",
+        name: "Andrés Londoño",
+        role: "Coordinador de ventas",
+      },
+    ],
   },
   {
     id: "school-app",

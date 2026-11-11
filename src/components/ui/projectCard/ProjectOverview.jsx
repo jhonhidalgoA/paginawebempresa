@@ -8,7 +8,10 @@ export default function ProjectOverview({ overview }) {
       <h3 className="project-overview__title">
         Descripción <span className="project-overview__highlight">general</span>
       </h3>
-      <p className="project-overview__text">{overview}</p>
+
+      <div className="project-overview__card">
+        <p className="project-overview__text">{overview}</p>
+      </div>
     </section>
   );
 }

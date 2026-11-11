@@ -1,4 +1,12 @@
-import { Users, Layers, Mail, Workflow, Gem } from "lucide-react";
+import {
+  Users,
+  Layers,
+  Mail,
+  Workflow,
+  Gem,
+  Hammer,
+  Quote,
+} from "lucide-react";
 
 export const titleData = {
   about: {
@@ -108,5 +116,24 @@ export const titleData = {
     after: "",
     description:
       "Aplicación móvil con seguimiento en vivo de pedidos y notificaciones push.",
+  },
+  projectStory: {
+    icon: Hammer,
+    breadcrumb: "",
+    before: "Cómo lo ",
+    highlight: "construimos",
+    after: "",
+    description:
+      "El enfoque del proyecto y las etapas que seguimos de principio a fin.",
+  },
+
+  projectTestimonials: {
+    icon: Quote,
+    breadcrumb: "",
+    before: "Lo que dicen ",
+    highlight: "nuestros clientes",
+    after: "",
+    description:
+      "Opiniones de quienes confiaron en nosotros para llevar su proyecto adelante.",
   },
 };

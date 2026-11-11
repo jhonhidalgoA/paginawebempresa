@@ -52,6 +52,11 @@
   color: var(--color-accent); 
 }
 
+.creative-web__a {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
 
 @media (max-width: 480px) {
   .creative-web__title {

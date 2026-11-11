@@ -84,6 +84,11 @@
   display: block;
 }
 
+
+.project-detail-page__story-section {
+  margin-top: var(--space-12);
+}
+
 .project-detail-page__story {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -95,6 +100,14 @@
 .project-detail-page__story .project-overview,
 .project-detail-page__story .project-timeline {
   margin-top: 0;
+}
+
+.project-detail-page__story .project-overview__highlight,
+.project-detail-page__story .project-timeline__highlight {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: inherit;
 }
 
 @media (max-width: 1024px) {

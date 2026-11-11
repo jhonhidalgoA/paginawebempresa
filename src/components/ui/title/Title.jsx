@@ -31,9 +31,10 @@ export default function Title({ page }) {
 
           {isProjectDetail ? (
             <>
-              <Link to="/projects" className="title__crumb">
+              <Link to="/#projects" className="title__crumb">
                 <span>Proyectos</span>
               </Link>
+              
               <ChevronRight size={14} className="title__separator" />
               <span
                 className="title__crumb title__crumb--current"
